@@ -8,7 +8,6 @@ import pages.BasePage;
 public class FirstPage_hw6 extends BasePage {
 
     private final By searchField = By.name("q");
-    public final By pomFile = By.xpath(".//a[contains(text(),'pom.xml')]");
 
     /**
      * конструктор
@@ -28,23 +27,5 @@ public class FirstPage_hw6 extends BasePage {
         driver.findElement(searchField).sendKeys(Keys.ENTER);
         driver.findElement(By.xpath(".//a[contains(text(),'" + authorName + "')]")).click();
     }
-
-    /**
-     * метор который находит версию артефакта
-     * @param artifactName название атрефакта
-     * @return версию артефакта
-     */
-    public String findVersion(String artifactName) {
-        driver.findElement(pomFile).click();
-
-        String artifactNameId = driver.findElement(By.xpath(".//td[contains(.,'"+artifactName+"')]")).getAttribute("id");
-        int artifactNameNumber = Integer.parseInt(artifactNameId.substring(2)) + 1;
-        String artifactVersionId = artifactNameId.substring(0, 2) + artifactNameNumber;
-        String versionText = driver.findElement(By.id(artifactVersionId)).getText();
-        String part = versionText.split(">")[1];
-        String version = part.split("<")[0];
-        return version;
-    }
-
 
 }
