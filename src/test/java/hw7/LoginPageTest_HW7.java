@@ -5,20 +5,20 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import pages.LoginPage;
-import tests.BaseTest;
+
+
 
 public class LoginPageTest_HW7 extends BaseTest {
     private final static Logger LOG = LogManager.getLogger("Version");
 
-    private LoginPage loginPage;
+    private LoginPageObject loginPage;
     private FirstPage_hw7 gitHubFirstPage;
     private PomePage pomePage;
     private SearchPage searchPage;
 
     @Before
     public void setUp() {
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPageObject(driver);
         gitHubFirstPage = new FirstPage_hw7(driver);
         pomePage = new PomePage(driver);
         searchPage = new SearchPage(driver);

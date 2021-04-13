@@ -5,14 +5,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import pages.LoginPage;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(Parameterized.class)
 public class ParameterSearch extends BaseTest {
-    private LoginPage loginPage;
+    private LoginPageObject loginPage;
     private FirstPage_hw7 gitHubFirstPage;
     private SearchPage searchPage;
     private String authorName;
@@ -24,7 +23,7 @@ public class ParameterSearch extends BaseTest {
 
     @Before
     public void setUp() {
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPageObject(driver);
         gitHubFirstPage = new FirstPage_hw7(driver);
         searchPage = new SearchPage(driver);
     }
