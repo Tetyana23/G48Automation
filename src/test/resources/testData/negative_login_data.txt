@@ -1,0 +1,11 @@
+Tetyana, ytrerttr
+admin1, admin
+user1, user
+<script>alert("Error!")</script>, admin
+tyuyty, <script>alert("Error!")</script>
+admin1, #
+admin1,  OR 1=1
+BKuso, 123qweqwe
+BKuso, 123QWEqwe
+BKuso, 123qweQWE
+
