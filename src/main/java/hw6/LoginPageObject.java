@@ -3,7 +3,6 @@ package hw6;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pages.BasePage;
 
 public class LoginPageObject extends BasePage {
 

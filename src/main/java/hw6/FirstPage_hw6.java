@@ -3,7 +3,6 @@ package hw6;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import pages.BasePage;
 
 public class FirstPage_hw6 extends BasePage {
 

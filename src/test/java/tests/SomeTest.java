@@ -1,36 +1,38 @@
 package tests;
 
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-@RunWith(Parameterized.class)
+import static helpers.fileHelper.readFile;
+import static helpers.fileHelper.writeFileAndGet;
+import static org.junit.Assert.assertTrue;
+
 public class SomeTest {
 
-    private String username;
-    private String password;
+   @Test
+    public void some(){
+      // readFile("/Users/tatianakurylenko/IdeaProjects/G48AutomationTanya2/src/test/resources/test").forEach(System.out::println);
 
-    public SomeTest(String username, String password) {
-        this.username = username;
-        this.password = password;
-
-    }
-    @Parameterized.Parameters
-    public static List<String[]> data(){
-        List<String[]> result = new ArrayList<>();
-        result.add(new String[]{"adminUser","adminPassword"});
-        result.add(new String[]{"testUser","testPassword"});
-        return result;
-    }
+      List<String> data = new ArrayList<>();
+      data.add("Я буду хорошим автоматизатором на Selenium");
+      data.add("Я буду хорошим автоматизатором на Selenium");
+      data.add("Я буду хорошим автоматизатором на Selenium");
+      data.add("Я буду хорошим автоматизатором на Selenium");
+      data.add("Я буду хорошим автоматизатором на Selenium");
+      data.add("Я буду хорошим автоматизатором на Selenium");
+      data.add("Я буду хорошим автоматизатором на Selenium");
 
 
-@Test
-    public void showUsernameAdnPassword(){
-    System.out.println("Login: " + this.username);
-    System.out.println("Password " + this.password);
-}
+    readFile(writeFileAndGet(data, "our_test.txt")).forEach(System.out::println);
+
+   }
+
+
+
+
+
 
 }
