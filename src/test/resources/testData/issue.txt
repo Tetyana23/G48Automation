@@ -1,0 +1,7 @@
+G48Automation, Tetyana23, редактирование поля, поле должно быть отредактировано, bug
+G48Automation, Tetyana23, требования, описать требования, documentation
+G48Automation, Tetyana23, почему ошибка, почему появилась ошибка, question
+G48Automation, Tetyana23, серверная ошибка, серверная ошибка на странице, bug, documentation
+G48Automation, Tetyana23, пользовательская ошибка, пользовательская ошибка на странице, bug, question
+G48Automation, Tetyana23, поля, какими будут поля, documentation, question
+G48Automation, Tetyana23, ошибки в словах, ошибки, bug, documentation, question
