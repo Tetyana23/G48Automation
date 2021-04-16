@@ -63,7 +63,7 @@ public class IssueHW8 extends BaseTest {
         LOG.debug("начинаю читать файл");
         readFile(getProperty("user.dir") + "/src/test/resources/testData/issue.txt")
                 .forEach(line -> {
-                    LOG.debug("разделяб строку запятой и пробелом");
+                    LOG.debug("разделяю строку запятой и пробелом");
                     String[] array = line.split(", ");
                     LOG.debug("нулевой елемент- название проекта, первый- название автора, второй- title, третий- comment, остальные лейблы");
                     LOG.debug("копируем елементы начиная с четвертого и сохраняем их в List<String>");
