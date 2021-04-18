@@ -1,4 +1,4 @@
-package tests;
+package tests.ui;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -32,10 +32,9 @@ public class NegativeLoginTest extends BaseTest {
     }
 
     @Parameterized.Parameters
-    public static List<String[]> data() {
-        List<String[]> result = new ArrayList<>();
-        readFile(getProperty("user.dir") + "/src/test/resources/testData/negative_login_data.txt")
-                .forEach(line -> result.add(line.split(", ")));
+    public static List<Object[]> data() {
+        List<Object[]> result = new ArrayList<>();
+            readFile(getProperty("user.dir") + "/src/test/resources/testData/negative_login_data.txt").forEach(line -> result.add(line.split(", ")));
         return result;
 
     }
