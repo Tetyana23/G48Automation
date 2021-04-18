@@ -1,4 +1,4 @@
-package tests.ui;
+package tests.uiLesson;
 
 import org.junit.After;
 import org.junit.Before;
@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class BaseTest {
     protected WebDriver driver;
+
 
 
     @Before

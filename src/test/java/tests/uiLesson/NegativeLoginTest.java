@@ -1,4 +1,4 @@
-package tests.ui;
+package tests.uiLesson;
 
 import org.junit.Before;
 import org.junit.Test;
