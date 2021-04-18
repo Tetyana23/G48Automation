@@ -1,4 +1,4 @@
-package tests.uiLesson;
+package tests.ui;
 
 import org.junit.Test;
 

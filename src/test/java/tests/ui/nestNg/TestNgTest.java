@@ -1,4 +1,4 @@
-package tests.uiLesson.nestNg;
+package tests.ui.nestNg;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Factory;
