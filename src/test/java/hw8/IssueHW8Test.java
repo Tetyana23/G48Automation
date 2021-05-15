@@ -3,6 +3,7 @@ package hw8;
 import hw8.issues.IssueCreationPage;
 import hw8.issues.IssueInfoPage;
 import hw8.issues.IssuesPage;
+import io.qameta.allure.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Before;
@@ -17,8 +18,12 @@ import java.util.List;
 import static hw8.helpers.FileHelper.readFile;
 import static java.lang.System.getProperty;
 
+@Feature("Creation new Issues by taking data from a file")
+@Story("HW8")
+@Owner("Tetyana23")
+@Severity(SeverityLevel.MINOR)
 @RunWith(Parameterized.class)
-public class IssueHW8 extends BaseTest {
+public class IssueHW8Test extends BaseTest {
     private final static Logger LOG = LogManager.getLogger("вычитка данных");
     private LoginPageObject loginPage;
     private FirstPage gitHubFirstPage;
@@ -36,7 +41,7 @@ public class IssueHW8 extends BaseTest {
     private final List<String> labels;
 
 
-    public IssueHW8(String projectName, String authorName, String title, String comment, List<String> labels) {
+    public IssueHW8Test(String projectName, String authorName, String title, String comment, List<String> labels) {
         this.projectName = projectName;
         this.authorName = authorName;
         this.title = title;
@@ -76,7 +81,7 @@ public class IssueHW8 extends BaseTest {
 
     }
 
-
+    @Description("Тест нужен, чтобы авторизироваться, найти проект, открыть его. Также, чтобы создать новые Issue путем извлечения данных из файла.")
     @Test
     public void checkIssue() {
         loginPage.login(System.getProperty("username"), System.getProperty("password"));

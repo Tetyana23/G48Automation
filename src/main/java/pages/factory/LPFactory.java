@@ -1,5 +1,6 @@
 package pages.factory;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -29,13 +30,13 @@ public class LPFactory {
         PageFactory.initElements(driver, this);
     }
 
-
+    @Step("Логин")
     public void login(String username, String password) {
         loginField.sendKeys(username);
         passwordField.sendKeys(password);
         submitButton.click();
     }
-
+    @Step("Валидация сообщение об ошибке")
     public void validateErrorMessage(String errorMessage) {
         new WebDriverWait(driver, 20)
                 .until(ExpectedConditions.textToBePresentInElement(errorMessageText, errorMessage));

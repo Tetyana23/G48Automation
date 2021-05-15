@@ -2,6 +2,7 @@ package tests.api;
 
 import io.restassured.http.ContentType;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
@@ -12,6 +13,7 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static java.lang.System.getProperty;
 
+@Ignore
 public class NpSettlementsTest extends BaseApiTest {
 
     private Map<String, Object> body = new HashMap<>();

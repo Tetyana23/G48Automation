@@ -1,5 +1,6 @@
 package tests.api;
 
+import io.qameta.allure.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -11,6 +12,10 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.Matchers.hasSize;
 
+
+@Feature("Getting currencies using API tests")
+@Owner("Tetyana23")
+@Severity(SeverityLevel.CRITICAL)
 @RunWith(Parameterized.class)
 public class PrivatGetCurrencyTest extends BaseApiTest {
 
@@ -29,7 +34,7 @@ public class PrivatGetCurrencyTest extends BaseApiTest {
 
     }
 
-
+    @Description("Тест нужен, чтобы проверить валюту в банке с помощью API тестов")
     @Test
     public void checkCurrencyInPB() {
         given().spec(rspec)

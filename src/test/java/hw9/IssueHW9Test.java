@@ -4,6 +4,7 @@ import hw9.helpers.ExcelHelper;
 import hw9.issues.IssueCreationPage;
 import hw9.issues.IssueInfoPage;
 import hw9.issues.IssuesPage;
+import io.qameta.allure.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Before;
@@ -18,8 +19,12 @@ import java.util.List;
 import static hw9.helpers.FileHelper.readFile;
 import static java.lang.System.getProperty;
 
+@Feature("Rewriting reading data from a file to reading data from Excel. Also creating a switch")
+@Story("HW9")
+@Owner("Tetyana23")
+@Severity(SeverityLevel.TRIVIAL)
 @RunWith(Parameterized.class)
-public class IssueHW9 extends BaseTest {
+public class IssueHW9Test extends BaseTest {
     private final static Logger LOG = LogManager.getLogger("вычитка данных");
     private LoginPageObject loginPage;
     private FirstPage gitHubFirstPage;
@@ -37,7 +42,7 @@ public class IssueHW9 extends BaseTest {
     private final List<String> labels;
 
 
-    public IssueHW9(String projectName, String authorName, String title, String comment, List<String> labels) {
+    public IssueHW9Test(String projectName, String authorName, String title, String comment, List<String> labels) {
         this.projectName = projectName;
         this.authorName = authorName;
         this.title = title;
@@ -89,6 +94,8 @@ public class IssueHW9 extends BaseTest {
         return result;
     }
 
+
+    @Description("Тест нужен, чтобы авторизоваться, перейти в проект. Также, чтобы создать новые Issue путем извлечения данных из Excel")
     @Test
     public void checkIssue() {
         loginPage.login(System.getProperty("username"), System.getProperty("password"));

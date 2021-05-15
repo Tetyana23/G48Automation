@@ -1,6 +1,7 @@
 package hw8.issues;
 
 import hw8.BaseProjectPage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,6 +25,7 @@ public class IssueCreationPage extends BaseProjectPage {
     private final By labelsButton = By.id("labels-select-menu");
     private final By labelsList = By.xpath("//div[@class = 'css-truncate']/span");
 
+    @Step("Создание новой Issue")
     public IssueInfoPage createNewIssue(String title,
                                         String body,
                                         List<String> labels) {

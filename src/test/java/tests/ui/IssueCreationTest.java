@@ -1,5 +1,6 @@
 package tests.ui;
 
+import io.qameta.allure.*;
 import org.junit.Before;
 import org.junit.Test;
 import pages.LoginPage;
@@ -9,6 +10,9 @@ import java.util.List;
 
 import static java.lang.System.getProperty;
 
+@Feature("Issue Creation")
+@Owner("Tetyana23")
+@Severity(SeverityLevel.NORMAL)
 public class IssueCreationTest extends BaseTest {
 
     private List<String> labels = new ArrayList<>();
@@ -22,6 +26,7 @@ public class IssueCreationTest extends BaseTest {
         labels.add("invalid");
     }
 
+    @Description("Тест нужен, чтобы создать новую Issue")
     @Test
     public void checkIssueCreation() {
         this.page.login(getProperty("username"), getProperty("password"))

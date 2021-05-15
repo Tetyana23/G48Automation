@@ -1,5 +1,6 @@
 package hw8.helpers;
 
+import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,6 +17,7 @@ public class FileHelper {
 
     private static final Logger log = LogManager.getLogger("Обработчик файлов");
 
+    @Step("Чтение строк используя путь к файлу")
     public static List<String> readFile(String path) {
         try {
             log.debug("Читаю файл " + path);
@@ -25,7 +27,7 @@ public class FileHelper {
             return new ArrayList<>();
         }
     }
-
+    @Step("Чтение строк используя файл")
     public static List<String> readFile(File file) {
         try {
             log.debug("Читаю файл " + file.getPath());
@@ -37,7 +39,7 @@ public class FileHelper {
     }
 
 
-
+    @Step("Запись строк в файл")
     public static File writeFileAndGet(List<String> data, String name) {
         log.debug("Пишем файл " + name);
         File parent = new File("/Users/tatianakurylenko/IdeaProjects/G48AutomationTanya2/target/outFiles");

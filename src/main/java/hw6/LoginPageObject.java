@@ -1,5 +1,6 @@
 package hw6;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,11 +16,13 @@ public class LoginPageObject extends BasePage {
         super(driver);
     }
 
+    @Step("Логин")
     public void login(String username, String password){
         driver.findElement(loginField).sendKeys(username);
         driver.findElement(passwordField).sendKeys(password);
         driver.findElement(submitButton).click();
     }
+    @Step("Проверяется валидационное сообщение об ошибке")
     public void validateErrorMessage(String errorMessage){
         Assert.assertEquals(errorMessage, driver.findElement(errorMessageText).getText());
     }

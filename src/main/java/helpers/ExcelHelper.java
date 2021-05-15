@@ -1,5 +1,6 @@
 package helpers;
 
+import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -17,6 +18,7 @@ public class ExcelHelper {
 
     private static final Logger log = LogManager.getLogger("Обработчик Excel");
 
+    @Step("Чтение данных с Excel вне зависимости от формата")
     public static List<List<String>> readDataFromExcelFile(String path, String sheetName, boolean useNew) {
         List<List<String>> result = new ArrayList<>();
         try {
@@ -40,6 +42,7 @@ public class ExcelHelper {
         return result;
     }
 
+    @Step("Чтение данных с Excel до 2003 года")
     public static List<Object[]> readDataProviderFromExcel(String path, String sheetName) {
         List<Object[]> result = new ArrayList<>();
         try {
@@ -70,6 +73,7 @@ public class ExcelHelper {
         return result;
     }
 
+    @Step("Запись данных в Excel")
     public static File writeToExcelFileAndGet(String path, List<List<String>> data) {
         File input = new File(path);
         try {

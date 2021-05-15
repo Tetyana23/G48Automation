@@ -1,5 +1,6 @@
 package hw7;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -20,6 +21,7 @@ public class PomePage extends BasePage {
      * @param artifactName название атрефакта
      * @return версию артефакта
      */
+    @Step("Поиск версии артефакта")
     public String findVersion(String artifactName) {
         driver.findElement(pomFile).click();
 

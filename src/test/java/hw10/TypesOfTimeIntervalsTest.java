@@ -2,6 +2,7 @@ package hw10;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import io.qameta.allure.*;
 import io.restassured.http.ContentType;
 import org.hamcrest.Matcher;
 import org.junit.Test;
@@ -19,15 +20,20 @@ import static io.restassured.internal.matcher.xml.XmlXsdMatcher.matchesXsd;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static java.lang.System.getProperty;
 
+
+@Feature("Creation API tests for Nova Poshta with helping Parametrized class")
+@Story("HW10")
+@Owner("Tetyana23")
+@Severity(SeverityLevel.CRITICAL)
 @RunWith(Parameterized.class)
-public class TypesOfTimeIntervals extends BaseApiTest {
+public class TypesOfTimeIntervalsTest extends BaseApiTest {
 
     ContentType contentType;
     Object body;
     String pathParameter;
     Matcher<?> bodyValidator;
 
-    public TypesOfTimeIntervals(ContentType contentType, Object body, String pathParameter, Matcher<?> bodyValidator) {
+    public TypesOfTimeIntervalsTest(ContentType contentType, Object body, String pathParameter, Matcher<?> bodyValidator) {
         this.contentType = contentType;
         this.body = body;
         this.pathParameter = pathParameter;
@@ -78,6 +84,7 @@ public class TypesOfTimeIntervals extends BaseApiTest {
         return new XmlMapper().writeValueAsString(body);
     }
 
+    @Description("Тест нужен, чтобы проверить виды временных интервалов с помощью Api тестов")
     @Test
     public void checkTypesOfTimesIntervals() {
         given().spec(this.rspec)

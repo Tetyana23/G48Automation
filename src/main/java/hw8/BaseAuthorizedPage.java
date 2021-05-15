@@ -1,5 +1,6 @@
 package hw8;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,6 +15,7 @@ public abstract class BaseAuthorizedPage extends BasePage {
     private final By userProfileButton = By.xpath("//summary[@aria-label='View profile and more']");
     private final By loginOutButton = By.xpath("//button[contains(text(), 'Sign')]");
 
+    @Step("Выход из приложения")
     public HomePage logout(){
         LOG.info("Выход из приложения");
         driver.findElement(userProfileButton).click();
